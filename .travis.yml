@@ -9,6 +9,7 @@ dist: bionic
 
 before_install:
   - pip install --user cpp-coveralls coveralls-merge
+  - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then sudo apt-get update; sudo apt-get install rebar; fi
 
 install:
   - sudo apt-get -q install libgd-dev libwebp-dev libpng-dev libjpeg-dev
